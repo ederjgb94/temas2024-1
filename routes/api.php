@@ -18,5 +18,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/carros', 'App\Http\Controllers\CarController@index');
-Route::post('/carros', 'App\Http\Controllers\CarController@store');
+// Route::get('/carros', 'App\Http\Controllers\CarController@index');
+// Route::post('/carros', 'App\Http\Controllers\CarController@store');
+// Route::get('/carros/{car}', 'App\Http\Controllers\CarController@show');
+// Route::put('/carros/{car}', 'App\Http\Controllers\CarController@update');
+// Route::delete('/carros/{car}', 'App\Http\Controllers\CarController@destroy');
+
+Route::apiResource('cars', 'App\Http\Controllers\CarController');

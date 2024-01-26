@@ -32,7 +32,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        return $car;
     }
 
     /**
@@ -40,7 +40,11 @@ class CarController extends Controller
      */
     public function update(Request $request, Car $car)
     {
-        //
+        $car->year = $request->year;
+        $car->model = $request->model;
+        $car->save();
+
+        return $car;
     }
 
     /**
@@ -48,6 +52,6 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        return $car->delete();
     }
 }
