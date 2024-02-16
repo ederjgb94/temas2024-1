@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         \App\Models\Car::factory(10)->create();
+        //php artisan migrate:fresh --seed
+
+        \App\Models\School::factory(10)->create();
+        \App\Models\Student::factory(100)->create();
     }
 }

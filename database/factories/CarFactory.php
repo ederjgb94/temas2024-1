@@ -115,6 +115,7 @@ class CarFactory extends Factory
         return [
             'year' => fake()->year(),
             'model' => $models[array_rand($models)],
+
         ];
     }
 }
