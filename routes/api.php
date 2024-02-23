@@ -25,3 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::delete('/carros/{car}', 'App\Http\Controllers\CarController@destroy');
 
 Route::apiResource('cars', 'App\Http\Controllers\CarController');
+
+Route::get('/student/{student}/school', 'App\Http\Controllers\StudentController@getSchool');
+
+Route::get('/school/{school}/students', 'App\Http\Controllers\SchoolController@getStudents');

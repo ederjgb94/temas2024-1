@@ -46,4 +46,9 @@ class SchoolController extends Controller
     {
         //
     }
+
+    public function getStudents(School $school)
+    {
+        return $school->students;
+    }
 }
