@@ -9,8 +9,8 @@ class Student extends Model
 {
     use HasFactory;
 
-    public function School()
+    public function schools()
     {
-        return $this->belongsTo(School::class);
+        return $this->belongsToMany(School::class);
     }
 }

@@ -28,4 +28,8 @@ Route::apiResource('cars', 'App\Http\Controllers\CarController');
 
 Route::get('/student/{student}/school', 'App\Http\Controllers\StudentController@getSchool');
 
-Route::get('/school/{school}/students', 'App\Http\Controllers\SchoolController@getStudents');
+// Route::get('/school/{school}/students', 'App\Http\Controllers\SchoolController@getStudents');
+
+Route::get('/schools/{school}/students', 'App\Http\Controllers\SchoolStudentController@getStudentsFromSchool');
+
+Route::get('/schools/{school}/students/{student}', 'App\Http\Controllers\SchoolStudentController@addStudentToSchool');

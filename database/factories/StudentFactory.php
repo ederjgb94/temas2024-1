@@ -25,7 +25,6 @@ class StudentFactory extends Factory
             'city' => $this->faker->city,
             'state' => $this->faker->state,
             'zip' => $this->faker->postcode,
-            'school_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

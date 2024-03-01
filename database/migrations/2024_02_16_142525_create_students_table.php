@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('zip');
 
             //forma corta
-            $table->foreignId('school_id')->constrained();
+            // $table->foreignId('school_id')->constrained();
 
             //forma larga
             // $table->unsignedBigInteger('school_id');
