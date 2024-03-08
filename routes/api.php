@@ -33,3 +33,5 @@ Route::get('/student/{student}/school', 'App\Http\Controllers\StudentController@
 Route::get('/schools/{school}/students', 'App\Http\Controllers\SchoolStudentController@getStudentsFromSchool');
 
 Route::get('/schools/{school}/students/{student}', 'App\Http\Controllers\SchoolStudentController@addStudentToSchool');
+
+Route::delete('/schools/{school}/students/{student}', 'App\Http\Controllers\SchoolStudentController@removeStudentFromSchool');
