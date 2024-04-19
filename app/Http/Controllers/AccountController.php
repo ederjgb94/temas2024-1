@@ -72,7 +72,9 @@ class AccountController extends Controller
      */
     public function edit(Account $account)
     {
-        //
+        return view('editar_usuario', [
+            'account' => $account,
+        ]);
     }
 
     /**
@@ -80,7 +82,8 @@ class AccountController extends Controller
      */
     public function update(Request $request, Account $account)
     {
-        //
+        $account->update($request->all());
+        return redirect()->route('accounts.index');
     }
 
     /**
@@ -88,6 +91,7 @@ class AccountController extends Controller
      */
     public function destroy(Account $account)
     {
-        //
+        $account->delete();
+        return redirect()->route('accounts.index');
     }
 }

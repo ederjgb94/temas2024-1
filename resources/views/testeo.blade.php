@@ -65,8 +65,18 @@
                     <img src="https://i.pravatar.cc/150?img={{ $random }}" alt="">
                     <h6 class="card-text">{{ $account->name }}</h6>
                     <h6 class="card-text card-subtitle">{{ $account->phone }}</h5>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                        <a href="#" class="btn btn-danger">Eliminar</a>
+                        <a href="/miprimerapagina/{{ $account->id }}/edit" class="btn btn-primary">Editar</a>
+
+                        <form
+                            action="{{ route('accounts.destroy', [
+                                'account' => $account->id,
+                            ]) }}"
+                            method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+
                 </div>
             </div>
         @endforeach
