@@ -17,7 +17,11 @@ class AccountFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'username' => $this->faker->userName(),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'password' => $this->faker->password(),
+            'phone' => $this->faker->phoneNumber(),
         ];
     }
 }

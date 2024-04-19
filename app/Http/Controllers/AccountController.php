@@ -14,7 +14,8 @@ class AccountController extends Controller
     {
         $accounts = Account::all();
         return view('testeo', [
-            'accounts' => $accounts
+            'accounts' => $accounts,
+            'isOk' => false,
         ]);
 
         // return view('testeo', [

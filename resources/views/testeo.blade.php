@@ -13,19 +13,66 @@
 </head>
 
 <body>
-    <p>{{ $accounts }}</p>
-
-    <button type="button" class="btn btn-primary">Primary</button>
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text">{{ $accounts }}</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mis Usuarios</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+    {{-- @if ($isOk)
+        <p>Es verdadero</p>
+    @else
+        <p>Es falso</p>
+    @endif --}}
+
+    <div class="d-flex flex-wrap text-center justify-content-center align-items-center p-4">
+        @foreach ($accounts as $account)
+            @php
+                $random = random_int(1, 70);
+            @endphp
+            <div class="card m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $account->username }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ $account->email }}</h6>
+                    <img src="https://i.pravatar.cc/150?img={{ $random }}" alt="">
+                    <h6 class="card-text">{{ $account->name }}</h6>
+                    <h6 class="card-text card-subtitle">{{ $account->phone }}</h5>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                        <a href="#" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        @endforeach
     </div>
+
+
 
     {{-- <p>Hola Mundo {{ $nombre }} {{ $apellido }}</p>
     <h1>Edad: {{ $edad }}</h1>

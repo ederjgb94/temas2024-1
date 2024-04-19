@@ -28,5 +28,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\School::factory(10)->create()->each(function ($school) {
             $school->students()->saveMany(\App\Models\Student::factory(10)->create());
         });
+
+        \App\Models\Account::factory(10)->create();
     }
 }
