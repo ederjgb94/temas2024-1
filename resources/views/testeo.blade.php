@@ -53,6 +53,18 @@
         <p>Es falso</p>
     @endif --}}
 
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Seleccionar trailer
+        </button>
+        <ul class="dropdown-menu">
+            @foreach ($accounts as $account)
+                <li><a class="dropdown-item" href="#">{{ $account->name }}</a></li>
+            @endforeach
+        </ul>
+    </div>
+
     <div class="d-flex flex-wrap text-center justify-content-center align-items-center p-4">
         @foreach ($accounts as $account)
             @php
